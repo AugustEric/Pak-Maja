@@ -14,6 +14,11 @@ class User extends Component
     public $password;
     public $penggunaTerpilih;
 
+    public function mount(){
+        if(auth()->user()->peran != 'admin'){
+            abort(403, 'Unauthorized');
+        }
+    }
     public function pilihEdit($id){
         $this->penggunaTerpilih = ModelUser::findorFail($id);
         $this->nama = $this->penggunaTerpilih->name;

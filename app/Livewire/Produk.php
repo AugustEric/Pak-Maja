@@ -19,6 +19,11 @@ class Produk extends Component
     public $produkTerpilih;
     public $fileExcel;
 
+    public function mount(){
+        if(auth()->user()->peran != 'admin'){
+            abort(403, 'Unauthorized');
+        }
+    }
     public function imporExcel()
     {
         Excel::import(new ImporProduk, $this->fileExcel);

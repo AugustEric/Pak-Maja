@@ -11,13 +11,23 @@ class Produk implements ToCollection, WithStartRow
 {
     public function startRow(): int
     {
-        return 1;
+        return 2;
     }
     /**
     * @param Collection $collection
     */
     public function collection(Collection $collection)
     {
-        dd($collection);
+        foreach ($collection as $col){
+            $kodeyangadadidatabase =ModelProduk::where('kode', $col[1])->first();
+            if(!$kodeyangadadidatabase){
+                $simpan = new ModelProduk();
+                $simpan->kode = $col[1];
+                $simpan->nama = $col[2];
+                $simpan->harga = $col[3];
+                $simpan->stok = 10;
+                $simpan->save();
+            }
+        }
     }
 }

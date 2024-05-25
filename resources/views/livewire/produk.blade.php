@@ -35,8 +35,8 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <th>No</th>
-                                    <th>Kode</th>
                                     <th>Nama</th>
+                                    <th>Kode</th>
                                     <th>Harga</th>
                                     <th>Stok</th>
                                     <th>Data</th>
@@ -157,7 +157,7 @@
                             <button class="btn btn-secondary" wire:click='batal'>Batal</button>
                         </div>
                     </div>
-                    @elseif ($pilihanMenu == 'excel')
+                @elseif ($pilihanMenu == 'excel')
                     <div class="card border-primary my-2">
                         <div class="card-header bg-primary text-white">
                             Import Produk
