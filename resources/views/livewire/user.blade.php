@@ -124,8 +124,8 @@
                             <Label>Peran</Label>
                             <select class="form-control" wire:model='peran'>
                                 <option>-- Pilih Peran --</option>
-                                <option value="Kasir">Kasir</option>
-                                <option value="Admin">Admin</option>
+                                <option value="kasir">Kasir</option>
+                                <option value="admin">Admin</option>
                             </select>
                             @error('peran')
                             <span class="text-danger">Peran Harus Diisi</span>
