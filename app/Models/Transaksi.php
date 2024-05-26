@@ -8,7 +8,6 @@ use App\Models\DetilTransaksi;
 
 class Transaksi extends Model
 {
-    
     protected $fillable = ['kode', 'total', 'status'];
     public function detilTransaksi()
     {
